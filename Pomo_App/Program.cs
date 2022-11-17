@@ -20,6 +20,8 @@ class Program
             Console.WriteLine("Enter your Rest time in this format (hh:mm:ss)");
             string? input2 = Console.ReadLine();
 
+            DateTime StartTime = DateTime.Now;
+
             Console.Clear();
             Console.WriteLine("WORK TIME");
             Thread.Sleep(TimeInterval.ConvertInputToMillSec(input ?? "00:00:05"));
@@ -31,10 +33,10 @@ class Program
             Console.Clear();
 
             DateTime End = DateTime.Now;
-            TimeSpan Timmer = (End - Start);
-            Console.WriteLine($"Total Console session was {Timmer.Hours} " +
-                $"+ : + {Timmer.Minutes} " +
-                $"+ : {Timmer.Seconds}Seconds");
+            TimeSpan Timmer = (End - StartTime);
+            Console.WriteLine($"Total Console session was {Timmer.Hours} Hour(s)" +
+                $"+ : + {Timmer.Minutes} Minute(s)" +
+                $"+ : {Timmer.Seconds}Second(s)");
 
             Console.WriteLine(" ");
 
@@ -60,9 +62,9 @@ class Program
 
         DateTime EndTime = DateTime.Now;
         TimeSpan SessionTimmer = (EndTime - Start);
-        Console.WriteLine($"Total Console session was {SessionTimmer.Hours} " +
-            $"+ : + {SessionTimmer.Minutes} " +
-            $"+ : {SessionTimmer.Seconds}Seconds");
+        Console.WriteLine($"Total Console session was {SessionTimmer.Hours} Hour(s)" +
+            $"+ : + {SessionTimmer.Minutes}Minute(s) " +
+            $"+ : {SessionTimmer.Seconds}Second(s)");
 
         
 
