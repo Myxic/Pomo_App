@@ -24,17 +24,35 @@ class Program
 
             Console.Clear();
             Console.WriteLine("WORK TIME");
-            Thread.Sleep(TimeInterval.ConvertInputToMillSec(input ?? "00:00:05"));
+            //Thread.Sleep(TimeInterval.ConvertInputToMillSec(input ?? "00:00:05"));
+            int working = TimeInterval.ConvertInputToMillSec(input ?? "00:00:05") / 1000;
+            for (int i = 0; i < working; working--)
+            {
+              
+                Thread.Sleep(1000);
+                Console.Clear();
+                Console.WriteLine($"Work Time  Left:{working} Second(s)");
+              
+            }
 
             Console.Clear();
             Console.WriteLine("Rest Time");
-            Thread.Sleep(TimeInterval.ConvertInputToMillSec(input2 ?? "00:00:05"));
+            int resting = TimeInterval.ConvertInputToMillSec(input2 ?? "00:00:05") / 1000;
+            //Thread.Sleep(TimeInterval.ConvertInputToMillSec(input2 ?? "00:00:05"));
+          
+            for (int i = 0; i < resting; resting --){
+                
+                Thread.Sleep(1000);
+                Console.Clear();
+                Console.WriteLine($"Rest Time  Left: { resting} Second(s)");
+                
+            }
 
             Console.Clear();
 
             DateTime End = DateTime.Now;
             TimeSpan Timmer = (End - StartTime);
-            Console.WriteLine($"Total Console session was {Timmer.Hours} Hour(s)" +
+            Console.WriteLine($"Total Work session was {Timmer.Hours} Hour(s)" +
                 $"+ : + {Timmer.Minutes} Minute(s)" +
                 $"+ : {Timmer.Seconds} Second(s)");
 
