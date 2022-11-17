@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/Pomo_App/Pomo_App/Pomo_App.csproj",
+      "projectUniqueName": "/Users/mac/Desktop/My c# Projects/Pomo_App/Pomo_App/Pomo_App.csproj",
       "projectName": "Pomo_App",
-      "projectPath": "/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/Pomo_App/Pomo_App/Pomo_App.csproj",
+      "projectPath": "/Users/mac/Desktop/My c# Projects/Pomo_App/Pomo_App/Pomo_App.csproj",
       "packagesPath": "/Users/mac/.nuget/packages/",
-      "outputPath": "/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/Pomo_App/Pomo_App/obj/",
+      "outputPath": "/Users/mac/Desktop/My c# Projects/Pomo_App/Pomo_App/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mac/.nuget/NuGet/NuGet.Config"
