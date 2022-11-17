@@ -16,7 +16,7 @@ namespace Pomo_App
 
 		public static int ConvertInputToMillSec(string Time)
 		{
-			var MyClass = new TimeInterval();
+			TimeInterval MyClass = new TimeInterval();
 			int hour = MyClass.hour;
             int min = MyClass.min;
             int sec = MyClass.sec;

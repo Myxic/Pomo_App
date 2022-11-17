@@ -24,27 +24,27 @@ class Program
 
             Console.Clear();
             Console.WriteLine("WORK TIME");
-            //Thread.Sleep(TimeInterval.ConvertInputToMillSec(input ?? "00:00:05"));
+         
             int working = TimeInterval.ConvertInputToMillSec(input ?? "00:00:05") / 1000;
             for (int i = 0; i < working; working--)
             {
               
                 Thread.Sleep(1000);
                 Console.Clear();
-                Console.WriteLine($"Work Time  Left:{working} Second(s)");
+                Console.WriteLine($"Work Time  Left:{working - 1} Second(s)");
               
             }
 
             Console.Clear();
             Console.WriteLine("Rest Time");
             int resting = TimeInterval.ConvertInputToMillSec(input2 ?? "00:00:05") / 1000;
-            //Thread.Sleep(TimeInterval.ConvertInputToMillSec(input2 ?? "00:00:05"));
+            
           
             for (int i = 0; i < resting; resting --){
                 
                 Thread.Sleep(1000);
                 Console.Clear();
-                Console.WriteLine($"Rest Time  Left: { resting} Second(s)");
+                Console.WriteLine($"Rest Time  Left: { resting - 1} Second(s)");
                 
             }
 
