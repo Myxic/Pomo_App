@@ -1,0 +1,28 @@
+﻿using System;
+using System.Diagnostics;
+using System.Threading;
+using System.Xml.Linq;
+
+namespace Pomo_App
+{
+	public class TimeInterval
+	{
+		public string name;
+		public int age;
+		public string state;
+
+		public TimeInterval(string Name, int Age, string State)
+		{
+			name = Name;
+			age = Age;
+			state = State;
+		}
+		public static void CheckAge()
+        {
+			var myClass = new TimeInterval(Name: "ebuka", Age: 12, State: "lagos");
+			Console.WriteLine(myClass);
+
+		}
+	}
+}
+

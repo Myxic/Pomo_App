@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{7F623C03-6A22-42DF-97F9-56A236C10B5E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pomo_App/TimeInterval.cs">
+    <Files>
+      <File FileName="Pomo_App/Program.cs" Line="52" Column="33" />
+      <File FileName="Pomo_App/TimeInterval.cs" Line="13" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Pomo_App " expanded="True">
+            <Node name="Pomo_App" expanded="True">
+              <Node name="TimeInterval.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Pomo__App PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
