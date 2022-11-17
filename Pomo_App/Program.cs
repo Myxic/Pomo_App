@@ -36,11 +36,11 @@ class Program
             TimeSpan Timmer = (End - StartTime);
             Console.WriteLine($"Total Console session was {Timmer.Hours} Hour(s)" +
                 $"+ : + {Timmer.Minutes} Minute(s)" +
-                $"+ : {Timmer.Seconds}Second(s)");
+                $"+ : {Timmer.Seconds} Second(s)");
 
             Console.WriteLine(" ");
 
-            Console.WriteLine("Enter \"N\" TO BREAK");
+            Console.WriteLine("Enter \"N\" TO BREAK OR Enter any key to CONTINUE ");
 
             string? input3 = Console.ReadLine();
 
@@ -63,8 +63,8 @@ class Program
         DateTime EndTime = DateTime.Now;
         TimeSpan SessionTimmer = (EndTime - Start);
         Console.WriteLine($"Total Console session was {SessionTimmer.Hours} Hour(s)" +
-            $"+ : + {SessionTimmer.Minutes}Minute(s) " +
-            $"+ : {SessionTimmer.Seconds}Second(s)");
+            $"+ : + {SessionTimmer.Minutes} Minute(s) " +
+            $"+ : {SessionTimmer.Seconds} Second(s)");
 
         
 
