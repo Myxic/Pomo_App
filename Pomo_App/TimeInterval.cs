@@ -14,7 +14,7 @@ namespace Pomo_App
 
 	
         
-		public static int ConvertInputToMillSec(string Time)
+		private static int ConvertInputToMillSec(string Time)
 		{
 			TimeInterval MyClass = new TimeInterval();
 			int hour = MyClass.hour;
