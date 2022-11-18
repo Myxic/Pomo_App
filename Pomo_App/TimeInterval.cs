@@ -8,12 +8,12 @@ namespace Pomo_App
 {
 	public class TimeInterval
 	{
-        public int hour;
-        public int min;
-        public int sec;
+        private readonly int hour;
+        private readonly int min;
+        private readonly int sec;
 
 	
-
+        
 		public static int ConvertInputToMillSec(string Time)
 		{
 			TimeInterval MyClass = new TimeInterval();
@@ -35,8 +35,9 @@ namespace Pomo_App
 
         public static void DisplayTimerWork(string input)
         {
-
-            int working = TimeInterval.ConvertInputToMillSec(input ?? "00:00:05") / 1000;
+            int conversion = 1000;
+            int oneSec = 1;
+            int working = TimeInterval.ConvertInputToMillSec(input ?? "00:00:05") / conversion;
 
             Console.Clear();
             Console.WriteLine("WORK TIME");
@@ -44,15 +45,17 @@ namespace Pomo_App
             for (int i = 0; i < working; working--)
             {
 
-                Thread.Sleep(1000);
+                Thread.Sleep(conversion);
                 Console.Clear();
-                Console.WriteLine($"Work Time  Left:{working - 1} Second(s)");
+                Console.WriteLine($"Work Time  Left:{working - oneSec} Second(s)");
 
             }
         }
         public static void DisplayTimerRest(string input2)
         {
-            int resting = TimeInterval.ConvertInputToMillSec(input2) / 1000;
+            int conversion = 1000;
+            int oneSec = 1;
+            int resting = TimeInterval.ConvertInputToMillSec(input2) / conversion;
 
             Console.Clear();
             Console.WriteLine("Rest Time");
@@ -60,9 +63,9 @@ namespace Pomo_App
             for (int i = 0; i < resting; resting--)
             {
 
-                Thread.Sleep(1000);
+                Thread.Sleep(conversion);
                 Console.Clear();
-                Console.WriteLine($"Rest Time  Left: {resting - 1} Second(s)");
+                Console.WriteLine($"Rest Time  Left: {resting - oneSec} Second(s)");
 
             }
         }
