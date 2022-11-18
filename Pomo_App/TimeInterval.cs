@@ -32,7 +32,54 @@ namespace Pomo_App
 			return TotalTime * 1000;
 
         }
-	
+
+        public static void DisplayTimerWork(string input)
+        {
+
+            int working = TimeInterval.ConvertInputToMillSec(input ?? "00:00:05") / 1000;
+
+            Console.Clear();
+            Console.WriteLine("WORK TIME");
+
+            for (int i = 0; i < working; working--)
+            {
+
+                Thread.Sleep(1000);
+                Console.Clear();
+                Console.WriteLine($"Work Time  Left:{working - 1} Second(s)");
+
+            }
+        }
+        public static void DisplayTimerRest(string input2)
+        {
+            int resting = TimeInterval.ConvertInputToMillSec(input2) / 1000;
+
+            Console.Clear();
+            Console.WriteLine("Rest Time");
+
+            for (int i = 0; i < resting; resting--)
+            {
+
+                Thread.Sleep(1000);
+                Console.Clear();
+                Console.WriteLine($"Rest Time  Left: {resting - 1} Second(s)");
+
+            }
+        }
+
+		public static void WorkTimmer(TimeSpan worktime)
+		{
+            Console.WriteLine($"Total Work session was {worktime.Hours} Hour(s)" +
+               $"+ : + {worktime.Minutes} Minute(s)" +
+               $"+ : {worktime.Seconds} Second(s)");
+        }
+
+        public static void SessionTimmer(TimeSpan SessionTimmer)
+		{
+            Console.WriteLine($"Total Console session was {SessionTimmer.Hours} Hour(s)" +
+           $"+ : + {SessionTimmer.Minutes} Minute(s) " +
+           $"+ : {SessionTimmer.Seconds} Second(s)");
+        }
 
 
 

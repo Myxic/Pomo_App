@@ -20,45 +20,31 @@ class Program
             Console.WriteLine("Enter your Rest time in this format (hh:mm:ss)");
             string? input2 = Console.ReadLine();
 
+
             DateTime StartTime = DateTime.Now;
 
-            Console.Clear();
-            Console.WriteLine("WORK TIME");
-         
-            int working = TimeInterval.ConvertInputToMillSec(input ?? "00:00:05") / 1000;
-            for (int i = 0; i < working; working--)
-            {
-              
-                Thread.Sleep(1000);
-                Console.Clear();
-                Console.WriteLine($"Work Time  Left:{working - 1} Second(s)");
-              
-            }
+           
 
-            Console.Clear();
-            Console.WriteLine("Rest Time");
-            int resting = TimeInterval.ConvertInputToMillSec(input2 ?? "00:00:05") / 1000;
+            TimeInterval.DisplayTimerWork(input ?? "00:00:05");
+
             
-          
-            for (int i = 0; i < resting; resting --){
-                
-                Thread.Sleep(1000);
-                Console.Clear();
-                Console.WriteLine($"Rest Time  Left: { resting - 1} Second(s)");
-                
-            }
+
+            TimeInterval.DisplayTimerRest(input2 ?? "00:00:05");
 
             Console.Clear();
 
             DateTime End = DateTime.Now;
             TimeSpan Timmer = (End - StartTime);
-            Console.WriteLine($"Total Work session was {Timmer.Hours} Hour(s)" +
-                $"+ : + {Timmer.Minutes} Minute(s)" +
-                $"+ : {Timmer.Seconds} Second(s)");
+
+
+            TimeInterval.WorkTimmer(Timmer);
+
 
             Console.WriteLine(" ");
 
+
             Console.WriteLine("Enter \"N\" TO BREAK OR Enter any key to CONTINUE ");
+
 
             string? input3 = Console.ReadLine();
 
@@ -80,9 +66,8 @@ class Program
 
         DateTime EndTime = DateTime.Now;
         TimeSpan SessionTimmer = (EndTime - Start);
-        Console.WriteLine($"Total Console session was {SessionTimmer.Hours} Hour(s)" +
-            $"+ : + {SessionTimmer.Minutes} Minute(s) " +
-            $"+ : {SessionTimmer.Seconds} Second(s)");
+
+        TimeInterval.SessionTimmer(SessionTimmer);
 
         
 
