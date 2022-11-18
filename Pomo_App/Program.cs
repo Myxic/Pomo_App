@@ -47,8 +47,9 @@ class Program
 
 
             string? input3 = Console.ReadLine();
+            string reply = input3 ?? "h";
 
-            if (input3.ToUpper() == "N")
+            if (reply.ToUpper() == "N")
             {
                 
                 session = false;
@@ -63,7 +64,7 @@ class Program
 
         }
         
-
+        
         DateTime EndTime = DateTime.Now;
         TimeSpan SessionTimmer = (EndTime - Start);
 
