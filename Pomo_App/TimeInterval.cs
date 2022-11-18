@@ -20,13 +20,15 @@ namespace Pomo_App
 			int hour = MyClass.hour;
             int min = MyClass.min;
             int sec = MyClass.sec;
+            int minToSec = 60;
+            int hourToSec = minToSec * 60;
 
 
             hour = int.Parse(Time.Split(":")[0]);
 			min = int.Parse(Time.Split(":")[1]);
 			sec = int.Parse(Time.Split(":")[2]);
 		
-			int TotalTime = (hour * 60 * 60) + (min * 60) + sec;
+			int TotalTime = (hour * hourToSec) + (min * minToSec) + sec;
 
 
 			return TotalTime * 1000;
