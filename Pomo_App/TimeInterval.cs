@@ -22,18 +22,38 @@ namespace Pomo_App
             int sec = MyClass.sec;
             int minToSec = 60;
             int hourToSec = minToSec * 60;
+            int Idx1 = 0;
+            int Idx2 = 1;
+            int Idx3 = 2;
 
+            int Length1 = 1;
+            int Length2 = 2;
+            int Length3 = 3;
 
-            hour = int.Parse(Time.Split(":")[0]);
-			min = int.Parse(Time.Split(":")[1]);
-			sec = int.Parse(Time.Split(":")[2]);
-		
-			int TotalTime = (hour * hourToSec) + (min * minToSec) + sec;
+            if (Time.Split(":").Length == Length3)
+            {
+                hour = int.Parse(Time.Split(":")[Idx1]);
+                min = int.Parse(Time.Split(":")[Idx2]);
+                sec = int.Parse(Time.Split(":")[Idx3]);
+            }else if (Time.Split(":").Length == Length2)
+            {
+                min = int.Parse(Time.Split(":")[Idx1]);
+                sec = int.Parse(Time.Split(":")[Idx2]);
+            }
+            else if (Time.Split(":").Length == Length1)
+            {
+                hour = 0;
+                min = 0;
+                sec = int.Parse(Time.Split(":")[Idx1]);
+            }
+
+                int TotalTime = (hour * hourToSec) + (min * minToSec) + sec;
 
 
 			return TotalTime * 1000;
 
         }
+       
 
         public static void DisplayTimerWork(string input)
         {
@@ -89,6 +109,32 @@ namespace Pomo_App
 
 
 
+    }
+
+    class TryMe
+    {
+        public static void checkerWork(string something)
+        {
+            if (string.IsNullOrEmpty(something) || string.IsNullOrEmpty(something) || something.Contains(':') == false)
+            {
+                Program.Run();
+            }
+            else
+            {
+                TimeInterval.DisplayTimerWork(something);
+            }
+        }
+        public static void checkerRest(string something)
+        {
+            if (string.IsNullOrEmpty(something) || string.IsNullOrEmpty(something) || something.Contains(':') == false)
+            {
+                Program.Run();
+            }
+            else
+            {
+                TimeInterval.DisplayTimerRest(something );
+            }
+        }
     }
 }
 

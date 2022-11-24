@@ -8,6 +8,12 @@ class Program
     static void Main(string[] args)
     {
 
+
+        Program.Run();
+
+    }
+    public static void Run()
+    {
         bool session = true;
         DateTime Start = DateTime.Now;
 
@@ -16,20 +22,21 @@ class Program
             Console.Clear();
             Console.WriteLine("Enter your work time in this format (hh:mm:ss)");
             string? input = Console.ReadLine();
-           
+
             Console.WriteLine("Enter your Rest time in this format (hh:mm:ss)");
             string? input2 = Console.ReadLine();
 
 
             DateTime StartTime = DateTime.Now;
 
-           
 
-            TimeInterval.DisplayTimerWork(input ?? "00:00:05");
+            TryMe.checkerWork(input ?? "");
 
             
 
-            TimeInterval.DisplayTimerRest(input2 ?? "00:00:05");
+
+            TryMe.checkerRest(input2 ?? "");
+            
 
             Console.Clear();
 
@@ -51,7 +58,7 @@ class Program
 
             if (reply.ToUpper() == "N")
             {
-                
+
                 session = false;
             }
             else
@@ -63,14 +70,12 @@ class Program
 
 
         }
-        
-        
+
+
         DateTime EndTime = DateTime.Now;
         TimeSpan SessionTimmer = (EndTime - Start);
 
         TimeInterval.SessionTimmer(SessionTimmer);
-
-        
 
     }
 
