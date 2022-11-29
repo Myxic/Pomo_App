@@ -1,59 +1,42 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Pomo_App
 {
-	public class TimeInterval
-	{
-        private readonly int hour;
-        private readonly int min;
-        private readonly int sec;
+    internal class TimeInterval
+    {
+        private static  int hour;
+        private static int min;
+        private static int sec;
 
-	
-        
-		private static int ConvertInputToMillSec(string Time)
-		{
-			TimeInterval MyClass = new TimeInterval();
-			int hour = MyClass.hour;
-            int min = MyClass.min;
-            int sec = MyClass.sec;
+
+
+        private static int ConvertInputToMillSec(string Time)
+        {
+            
             int minToSec = 60;
             int hourToSec = minToSec * 60;
             int Idx1 = 0;
             int Idx2 = 1;
             int Idx3 = 2;
+            int conversion = 1000;
 
-            int Length1 = 1;
-            int Length2 = 2;
-            int Length3 = 3;
-
-            if (Time.Split(":").Length == Length3)
-            {
-                hour = int.Parse(Time.Split(":")[Idx1]);
-                min = int.Parse(Time.Split(":")[Idx2]);
-                sec = int.Parse(Time.Split(":")[Idx3]);
-            }else if (Time.Split(":").Length == Length2)
-            {
-                min = int.Parse(Time.Split(":")[Idx1]);
-                sec = int.Parse(Time.Split(":")[Idx2]);
-            }
-            else if (Time.Split(":").Length == Length1)
-            {
-                hour = 0;
-                min = 0;
-                sec = int.Parse(Time.Split(":")[Idx1]);
-            }
-
-                int TotalTime = (hour * hourToSec) + (min * minToSec) + sec;
+            hour = int.Parse(Time.Split(":")[Idx1]);
+            min = int.Parse(Time.Split(":")[Idx2]);
+            sec = int.Parse(Time.Split(":")[Idx3]);
 
 
-			return TotalTime * 1000;
+            int TotalTime = (hour * hourToSec) + (min * minToSec) + sec;
+
+
+            return TotalTime * conversion;
 
         }
-       
+
 
         public static void DisplayTimerWork(string input)
         {
@@ -92,15 +75,15 @@ namespace Pomo_App
             }
         }
 
-		public static void WorkTimmer(TimeSpan worktime)
-		{
+        public static void WorkTimmer(TimeSpan worktime)
+        {
             Console.WriteLine($"Total Work session was {worktime.Hours} Hour(s)" +
                $"+ : + {worktime.Minutes} Minute(s)" +
                $"+ : {worktime.Seconds} Second(s)");
         }
 
         public static void SessionTimmer(TimeSpan SessionTimmer)
-		{
+        {
             Console.WriteLine($"Total Console session was {SessionTimmer.Hours} Hour(s)" +
            $"+ : + {SessionTimmer.Minutes} Minute(s) " +
            $"+ : {SessionTimmer.Seconds} Second(s)");
@@ -113,27 +96,49 @@ namespace Pomo_App
 
     class TryMe
     {
-        public static void checkerWork(string something)
+        private static readonly string patternText = @"^([0-9]{2}):([0-6]{1})([0-9]{1}):([0-6]{1})([0-9]{1})$";
+        private static readonly Regex reg = new Regex(patternText);
+        private static string? _valid;
+
+        public static string checkerWork()
         {
-            if (string.IsNullOrEmpty(something) || string.IsNullOrEmpty(something) || something.Contains(':') == false)
+
+            Console.WriteLine("Enter your work time in this format (hh:mm:ss)");
+            string? input = Console.ReadLine();
+            if (!reg.IsMatch(input))
             {
-                Program.Run();
+                Console.Clear();
+                Console.WriteLine("Wrong Format: Please Enter your work time in this format (hh:mm:ss)");
+                checkerWork();
             }
-            else
+            if (reg.IsMatch(input))
             {
-                TimeInterval.DisplayTimerWork(something);
+                _valid = input;
             }
+
+            return _valid;
+
         }
-        public static void checkerRest(string something)
+        public static string checkerRest()
         {
-            if (string.IsNullOrEmpty(something) || string.IsNullOrEmpty(something) || something.Contains(':') == false)
+            Console.WriteLine("Enter your Rest time in this format (hh:mm:ss)");
+            string? input2 = Console.ReadLine();
+
+            //if (string.IsNullOrEmpty(something) || string.IsNullOrEmpty(something) || something.Contains(':') == false)
+            if (!reg.IsMatch(input2))
             {
-                Program.Run();
+                Console.Clear();
+                Console.WriteLine("Wrong Format: Please Enter your rest time in this format (hh:mm:ss)");
+                checkerRest();
             }
-            else
+            if (reg.IsMatch(input2))
             {
-                TimeInterval.DisplayTimerRest(something );
+                _valid = input2;
             }
+
+            return _valid;
+            //TimeInterval.DisplayTimerRest(input2);
+
         }
     }
 }

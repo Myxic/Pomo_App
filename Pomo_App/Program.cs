@@ -19,24 +19,17 @@ class Program
 
         while (session)
         {
-            Console.Clear();
-            Console.WriteLine("Enter your work time in this format (hh:mm:ss)");
-            string? input = Console.ReadLine();
+            string WorkTime = TryMe.checkerWork();
+            string RestTime = TryMe.checkerRest();
 
-            Console.WriteLine("Enter your Rest time in this format (hh:mm:ss)");
-            string? input2 = Console.ReadLine();
-
+           
 
             DateTime StartTime = DateTime.Now;
 
+            TimeInterval.DisplayTimerWork(WorkTime);
+            TimeInterval.DisplayTimerRest(RestTime);
+           
 
-            TryMe.checkerWork(input ?? "");
-
-            
-
-
-            TryMe.checkerRest(input2 ?? "");
-            
 
             Console.Clear();
 
