@@ -3,18 +3,13 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="Pomo_App/TimeInterval.cs">
     <Files>
-      <File FileName="Pomo_App/Program.cs" />
-      <File FileName="Pomo_App/TimeInterval.cs" Line="45" Column="26" />
+      <File FileName="Pomo_App/Program.cs" Line="31" Column="12" />
+      <File FileName="Pomo_App/TimeInterval.cs" Line="100" Column="20" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
